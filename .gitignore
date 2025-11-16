@@ -217,3 +217,9 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/rust,rust-analyzer,windows,macos,linux,jetbrains+all,visualstudiocode
+
+# Ignore all .env files
+.env*
+# But don't ignore the template
+!.env.example
+!.env.template
