@@ -10,6 +10,15 @@ Based on: https://developers.circle.com/wallets/dev-controlled/entity-secret-man
 
 import os
 import sys
+from pathlib import Path
+
+# Load .env file if it exists
+try:
+    from dotenv import load_dotenv
+    env_path = Path(__file__).parent.parent / '.env'
+    load_dotenv(env_path)
+except ImportError:
+    pass  # python-dotenv not installed, rely on environment variables
 
 
 def register_entity_secret():

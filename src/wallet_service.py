@@ -10,7 +10,7 @@ from typing import Optional, Dict, List
 from circle.web3.developer_controlled_wallets import (
     CreateWalletSetRequest,
     CreateWalletRequest,
-    CreateDeveloperTransactionTransferRequest,
+    CreateTransferTransactionForDeveloperRequest,
 )
 
 from .circle_client import get_circle_client
@@ -194,7 +194,7 @@ class WalletService:
             wallet = wallet_response.data.wallet
 
             # Create transaction request
-            tx_request = CreateDeveloperTransactionTransferRequest.from_dict({
+            tx_request = CreateTransferTransactionForDeveloperRequest.from_dict({
                 "idempotency_key": str(uuid.uuid4()),
                 "wallet_id": request.wallet_id,
                 "blockchain": request.blockchain,
